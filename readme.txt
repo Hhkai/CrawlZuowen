@@ -5,4 +5,4 @@ charset : "gb2312"
 >javac Main.java
 >java Main
 
-�˽ű�����ʲ�����ȡ��ͬ��ҳ, ���Ҳ���֤��һ��. 
+此脚本大概率不会重复爬取相同网页, 但我不保证这一点. 
