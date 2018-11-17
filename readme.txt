@@ -1,4 +1,7 @@
-Crawl http://www.zuowen.com/gaokaozw/manfen/index_81.shtml
+﻿Crawl
+
+- http://www.zuowen.com/gaokaozw/manfen/index_81.shtml
+- https://www.unjs.com/zuowenku/zuowen/List_375.html
 
 charset : "gb2312"
 

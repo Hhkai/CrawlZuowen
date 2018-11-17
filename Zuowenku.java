@@ -16,14 +16,14 @@ import java.io.FileOutputStream;
 import java.io.OutputStreamWriter;
 import java.io.IOException;
 
-public class Zuowen {
+public class Zuowenku {
 	public int page;
 	public StringBuffer ctt;
 	public int floor;
 	private static String charset = "gb2312";
     public String outHtml;
     
-    Zuowen(String outHtml, int i) {
+    Zuowenku(String outHtml, int i) {
         this.outHtml = outHtml;
         this.page = i;
     }
@@ -31,10 +31,10 @@ public class Zuowen {
     public Set<String> eleLink(String html) {
         Set<String> elements = new HashSet<String>();
         String page = WebC.httpRequest(html, charset);
-        Pattern p = Pattern.compile("<a href=\"http://www.zuowen.com/e/(.*?).shtml\"");
+        Pattern p = Pattern.compile("<a href='https://www.unjs.com/zuowenku/(\\d*?).html'");
         Matcher m = p.matcher(page);
         while (m.find()) {
-            elements.add("http://www.zuowen.com/e/" + m.group(1) + ".shtml");
+            elements.add("https://www.unjs.com/zuowenku/" + m.group(1) + ".html");
         }
         /*
         Iterator i = elements.iterator();
@@ -48,7 +48,7 @@ public class Zuowen {
     public String article(String html) {
         String page = WebC.httpRequest(html, charset);
         //Pattern p = Pattern.compile("<div class=\"con_content\">\r\n(.*?)<p>(.*?)</p>\r\n(.*?)</div>");
-        Pattern p = Pattern.compile("<div class=\"con_content\">([\\s\\S]*?)</div>");
+        Pattern p = Pattern.compile("<td height=\"300\" valign=\"top\">([\\s\\S]*?)</td>");
         Matcher m = p.matcher(page);
         //Main.textWrite("QAQ.txt", page, false);
         String content = null;

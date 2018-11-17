@@ -42,16 +42,17 @@ public class Main {
     }
     */
 	public static void main(String[] args) {
-        //String aa = WebC.httpRequest("http://www.zuowen.com/e/20180809/5b6c05871778b.shtml", charset);
-        //Main.textWrite("html.txt", aa);
-        //String aa = WebC.httpRequest("http://www.zuowen.com/gaokaozw/manfen/index_9.shtml", charset);
-        //Main.textWrite("out.txt", aa);
-        int end = 80;
-        for (int i = 1; i <= end; ++i) {
-            String html = "http://www.zuowen.com/gaokaozw/manfen/index_" + i + ".shtml";
-            Zuowen a = new Zuowen(html);
-            a.go("zzz.txt");
+        //String aa = WebC.httpRequest("https://www.unjs.com/zuowenku/78905.html", charset);
+        //Main.textWrite("html.txt", aa, false);
+        //String aa = WebC.httpRequest("https://www.unjs.com/zuowenku/zuowen/List_375.html", charset);
+        //Main.textWrite("out.txt", aa, false);
+        
+        for (int i = 1; i <= 99; ++i) {
+            String html = "https://www.unjs.com/zuowenku/zuowen/List_" + i + ".html";
+            Zuowenku a = new Zuowenku(html, i);
+            a.go("zuowenku4.txt");
         }
+        
 	    System.out.println("main finish");
     }
 }
